@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zycrxs bxbx🖤</title>
+
+    <style>
+        body { 
+            background: #000; 
+            color: #fff; 
+            font-family: 'Segoe UI', sans-serif; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+            overflow: hidden; 
+            text-align: center; 
+        }
+
+        #kutu { 
+            position: relative;
+            padding: 40px 20px;
+            border-radius: 25px;
+            border: 2px solid #ff0055;
+            box-shadow: 0 0 30px #ff0055;
+            background: rgba(10, 10, 10, 0.9);
+            width: 85%;
+            max-width: 350px;
+        }
+
+        h1 { font-size: 1.4rem; margin-bottom: 50px; text-shadow: 0 0 10px #ff0055; }
+
+        .buton-alani {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            height: 50px;
+        }
+
+        button { 
+            padding: 12px 30px; 
+            font-size: 1.1rem; 
+            border: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            cursor: pointer;
+        }
+
+        #evet { 
+            background: #ff0055; 
+            color: white; 
+            box-shadow: 0 0 20px #ff0055;
+        }
+
+        #hayir { 
+            background: #333; 
+            color: #fff; 
+            position: relative;
+        }
+
+        #final { display: none; }
+        .mesaj { font-size: 1.8rem; color: #ff0055; text-shadow: 0 0 20px #ff0055; font-weight: bold; }
+        
+        .kalp { position: fixed; color: #ff0055; animation: uc 3s linear infinite; }
+
+        @keyframes uc { 
+            0% { transform: translateY(110vh) scale(0.5); opacity: 1; } 
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; } 
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="kutu">
+    <div id="soru-sayfasi">
+        <h1>DAMLA<br>DÜNYANIN EN GÜZEL KIZIMISIN?</h1>
+
+        <div class="buton-alani">
+            <button id="evet" onclick="basarili()">EVET</button>
+            <button id="hayir" onclick="kac()">HAYIR</button>
+        </div>
+    </div>
+
+    <div id="final">
+        <div class="mesaj">TABİKİDE EN GÜZEL KIZISIN</div>
+        <p style="margin-top:20px; font-weight: bold; color: #ff80ab;">
+            SENDEN GÜZELİ YOKKK ❤️
+        </p>
+    </div>
+</div>
+
+<script>
+function kac() {
+    const h = document.getElementById('hayir');
+
+    const x = Math.random() * (window.innerWidth - h.offsetWidth);
+    const y = Math.random() * (window.innerHeight - h.offsetHeight);
+
+    h.style.position = 'fixed';
+    h.style.left = x + 'px';
+    h.style.top = y + 'px';
+}
+
+function basarili() {
+    document.getElementById('soru-sayfasi').style.display = 'none';
+    document.getElementById('final').style.display = 'block';
+
+    setInterval(() => {
+        const k = document.createElement('div');
+        k.className = 'kalp';
+        k.innerHTML = '❤️';
+        k.style.left = Math.random() * 100 + 'vw';
+        k.style.fontSize = Math.random() * 30 + 10 + 'px';
+        document.body.appendChild(k);
+
+        setTimeout(() => k.remove(), 3000);
+    }, 200);
+}
+</script>
+
+</body>
+</html>
